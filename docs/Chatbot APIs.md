@@ -12,7 +12,7 @@ https://api.botlhale.xyz/startConversation
 ```
 
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#Authentication) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint allows you to generate a ConversationID valid for 24 hours. This is a unique ID you need to provide to keep track of different conversations.
@@ -146,7 +146,7 @@ https://api.botlhale.xyz/message
 ```
 
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#Authentication) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint handles the messages. It receives messages from the user and returns the bot response in JSON format.
@@ -776,7 +776,7 @@ https://api.botlhale.xyz/translate
 ```
 
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#Authentication) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint handles translations from the specified language to English.
@@ -890,7 +890,7 @@ https://api.botlhale.xyz/tts
 ```
 
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#Authentication) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint handles single text to speech conversion.
@@ -898,7 +898,7 @@ This endpoint handles single text to speech conversion.
 Request Params |Data Type | |Description |
 | ------------- | ------------- | ------------- | ------------- |
 | TextMsg  | `string` |**Required** | This is the text message from the user to the bot.| 
-| LanguageCode  | `string` | **Required** | This is the language in which the user interacts with the bot. <br/>See the [Supported Languages](../2%20-%20Languages.md) page for a list of supported languages and codes. |
+| LanguageCode  | `string` | **Required** | This is the language in which the user interacts with the bot. <br/>See the [Supported Languages](API.md#supported-languages) page for a list of supported languages and codes. |
 
 
 <br />
@@ -1045,7 +1045,7 @@ https://api.botlhale.xyz/asr
 ```
 
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#Authentication) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint handles single speech-to-text conversion. This API endpoint returns a text transcript of the audio file provided and supports audio clips of up to 1 minutes.
@@ -1169,7 +1169,7 @@ https://api.botlhale.xyz/asr/async/upload
 ```
 
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#Authentication) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint generates a presigned URL that allows the user to upload a speech file for the async ASR request. This endpoint returns a presigned URL and the auto-generated filename.
@@ -1347,7 +1347,7 @@ https://api.botlhale.xyz/asr/async/status
 ```
  
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#Authentication) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint returns the status of the asynchronous request process.
@@ -1465,7 +1465,7 @@ https://api.botlhale.xyz/asr/async/data
 ```
 
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#Authentication) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint returns the status of the async process.
