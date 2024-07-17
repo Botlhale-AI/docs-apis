@@ -11,14 +11,15 @@ const config = {
 
   title: 'APIs',
   // tagline: "The Botlhale NLP Toolkit",
-  url: 'https://murggar.github.io',
+  url: 'https://docs-apis.botlhale.xyz',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/ficon.png',
-  organizationName: 'murggar', // Usually your GitHub org/user name.
-  projectName: 'murggar.github.io', // Usually your repo name.
-  deploymentBranch: 'main', 
+  organizationName: 'Botlhale-AI', // Usually your GitHub org/user name.
+  projectName: 'docs-apis', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
+  trailingSlash: false, 
 
   presets: [
     [

@@ -7,26 +7,45 @@ import TabItem from '@theme/TabItem';
 
 # Translation API
 
-**translate POST**
+**Translate POST**
 
 ```bash
 https://api.botlhale.xyz/translate
 ```
 
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](../1%20-%20Authentication.md#generate-a-bearer-token-post) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](docs/API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint handles translations from the specified language to English.
 
 Request Params | Data Type | |Description
 | ------------- | ------------- | ------------- | ------------- |
-| Text  | `string` |**Required** |Text to be translated | 
-| LanguageCode  | `string` |**Optional** |Source language of text to be translated <br/>See the [Supported Languages](2%20-%20Languages.md) page for a list of supported languages and codes. |
+| Text  | `string` |**Required** |This is the text to be translated. | 
+| LanguageCode  | `string` |**Required** |This is the language code of the text that requires translation.| 
+| TargetCode  | `string` |**Required** |This is the language code for the output after translation.<br/>See the **Supported Languages** below for a list of supported languages and codes. |
+| OrgID  | `string` |**Required** |This is the OrgID. Botlhale provides you with the OrgID.||
 
+## Supported Languages
+
+The following table shows the languages Botlhale AI currently supports. The table also indicates the 
+speech tasks supported for each language. Our team is always working to add new languages to the list.
+
+| Language    | Region       | Code   | Translation | ASR | TTS | Diarization | Language ID |
+| ----------- | ------------ | ------ | ----------- | --- | --- | ----------- | ----------- |
+| English     | South Africa | en-ZA  | √           | √   | √   | √           | √           |
+| isiZulu     | South Africa | zu-ZA  | √           | √   | √   | √           | √           |
+| isiXhosa    | South Africa | xh-ZA  | √           | √   | √   | √           | √           |
+| Sesotho     | South Africa | st-ZA  | √           | √   | -   | √           | √           |
+| Setswana    | South Africa | tn-ZA  | √           | √   | √   | √           | √           |
+| Sepedi      | South Africa | nso-ZA | √           | √   | √   | √           | √           |
+| Tshivenda   | South Africa | vr-ZA  | -           | √   | √   | √           | √           |
+| Xitsonga    | South Africa | ts-ZA  | √           | √   | -   | √           | √           |
+| Afrikaans   | South Africa | af-ZA  | √           | √   | √   | √           | √           |
+| Kiswahili   | Kenya        | sw-KE  | √           | √   | √   | √           | -           |
+| Kinyarwanda | Rwanda       | rw-RW  | √           | √   | -   | -           | -           |
 
 **Request Example**
-
 
 <Tabs>
 <TabItem value="py" label="Python" default>
@@ -127,7 +146,7 @@ request(options, function (error, response) {
 https://api.botlhale.xyz/tts
 ```
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](../../1%20-%20Authentication.md#generate-a-bearer-token-post) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#Authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint handles single text to speech conversion.
@@ -135,7 +154,7 @@ This endpoint handles single text to speech conversion.
 Request Params |Data Type | |Description |
 | ------------- | ------------- | ------------- | ------------- |
 | TextMsg  | `string` |**Required** | This is the text message from the user to the bot.| 
-| LanguageCode  | `string` | **Required** | This is the language in which the user interacts with the bot. <br/>See the [Supported Languages](../2%20-%20Languages.md) page for a list of supported languages and codes. |
+| LanguageCode  | `string` | **Required** | This is the language in which the user interacts with the bot. |
 
 
 <br />
@@ -281,8 +300,7 @@ request is shown in the section that follows:
 https://api.botlhale.xyz/asr
 ```
 :::tip
-You need to include an Authentication Token in request headers. See the Authentication 
-page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](docs/API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint handles single speech-to-text conversion. This API endpoint returns a text transcript of the audio file provided and supports audio clips of up to 1 minutes.
@@ -405,7 +423,7 @@ type requires you to first upload the audio file to our server for the asynchron
 https://api.botlhale.xyz/asr/async/upload
 ```
 :::tip
-You need to include an Authentication Token in request headers. See the [Authentication](https://docs.botlhale.xyz/docs/APIs/Authentication/#generate-a-bearer-token-post) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](docs/API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint generates a presigned URL that allows the user to upload a speech file for the async ASR request. This endpoint returns a presigned URL and the auto-generated filename.
@@ -582,8 +600,8 @@ request(options, function (error, response) {
 https://api.botlhale.xyz/asr/async/status
 ```
  
- :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](https://docs.botlhale.xyz/docs/APIs/Rest%20APIs/Speech%20APIs/1%20-%20Authentication.md#generate-a-bearer-token-post) page of this documentation for information on how to generate authentication token codes.
+:::tip
+> You need to include an `Authentication Token` in request headers. See the [Authentication](docs/API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint returns the status of the asynchronous request process.
@@ -701,7 +719,7 @@ https://api.botlhale.xyz/asr/async/data
 ```
 
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](https://docs.botlhale.xyz/docs/APIs/Rest%20APIs/Speech%20APIs/1%20-%20Authentication.md#generate-a-bearer-token-post) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](docs/API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint returns the status of the async process.

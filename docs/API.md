@@ -29,11 +29,7 @@ speech tasks supported for each language. Our team is always working to add new 
 | Xitsonga    | South Africa | ts-ZA  | √           | √   | -   | √           | √           |
 | Afrikaans   | South Africa | af-ZA  | √           | √   | √   | √           | √           |
 | Kiswahili   | Kenya        | sw-KE  | √           | √   | √   | √           | -           |
-| Kikamba     | Kenya        | ka-KE  | √           | √   | √   | √           | -           |
-| Kikuyu      | Kenya        | ki-KE  | √           | √   | √   | √           | -           |
 | Kinyarwanda | Rwanda       | rw-RW  | √           | √   | -   | -           | -           |
-| Shona       | Zimbabwe     | sh-ZM  | √           | -   | -   | -           | -           |
-| Ewe         | Ghana        | ee-GH  | √           | -   | -   | -           | -           |
 
 
 
@@ -80,7 +76,7 @@ does not expire and is used to generate the API key you will use to interact wit
 
 
 :::tip
-You can get your API keys by going navigating to **Profile > API** on the platform.
+You can get your API keys by going navigating to **Settings > General Settings > API** on the platform.
 :::
 
 
