@@ -57,7 +57,7 @@ request is shown in the section that follows:
 https://api.botlhale.xyz/asr
 ```
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#Authentication) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint handles single speech-to-text conversion. This API endpoint returns a text transcript of the audio file provided and supports audio clips of up to 1 minutes.
@@ -181,7 +181,7 @@ https://api.botlhale.xyz/asr/async/upload
 ```
 
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#Authentication) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint generates a presigned URL that allows the user to upload a speech file for the async ASR request. This endpoint returns a presigned URL and the auto-generated filename.
@@ -359,7 +359,7 @@ https://api.botlhale.xyz/asr/async/status
 ```
  
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#Authentication) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint returns the status of the asynchronous request process.
@@ -477,7 +477,7 @@ https://api.botlhale.xyz/asr/async/data
 ```
 
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#Authentication) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint returns the status of the async process.
