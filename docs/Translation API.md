@@ -146,7 +146,7 @@ request(options, function (error, response) {
 https://api.botlhale.xyz/tts
 ```
 :::tip
-> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#Authentication) page of this documentation for information on how to generate authentication token codes.
+> You need to include an `Authentication Token` in request headers. See the [Authentication](API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
 This endpoint handles single text to speech conversion.
