@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.2.0">
 <title data-rh="true">Vela APIs | APIs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs-apis.botlhale.xyz/img/ficon.png"><meta data-rh="true" name="twitter:image" content="https://docs-apis.botlhale.xyz/img/ficon.png"><meta data-rh="true" property="og:url" content="https://docs-apis.botlhale.xyz/docs/Vela APIs"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Vela APIs | APIs"><meta data-rh="true" name="description" content="Calls"><meta data-rh="true" property="og:description" content="Calls"><link data-rh="true" rel="icon" href="/img/ficon.png"><link data-rh="true" rel="canonical" href="https://docs-apis.botlhale.xyz/docs/Vela APIs"><link data-rh="true" rel="alternate" href="https://docs-apis.botlhale.xyz/docs/Vela APIs" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs-apis.botlhale.xyz/docs/Vela APIs" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="APIs RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="APIs Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e9e29d28.css">
-<script src="/assets/js/runtime~main.a34ed464.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.9745a2d5.js" defer="defer"></script>
 <script src="/assets/js/main.1c873cbf.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -48,7 +48,7 @@ This API endpoint generates a presigned URL and associated credentials that allo
 <table><thead><tr><th>Body Params</th><th>Type</th><th>Requirement</th><th>Description</th></tr></thead><tbody><tr><td>org_id</td><td>string</td><td>Required</td><td>Organisation ID provided to you by Botlhale AI</td></tr><tr><td>chats</td><td>Array</td><td>Required</td><td>Array of message objects</td></tr><tr><td>metadata</td><td>Object</td><td>Optional</td><td>Chat metadata. See description below.</td></tr></tbody></table>
 <p>Metadata object:</p>
 <ul>
-<li><strong>agent</strong> (string): This is the email address of the agent in the call. If omitted, will leave agent as unspecified otherwise.</li>
+<li><strong>agent</strong> (string): This is the email address of the agent in the chat. If omitted, will leave agent as unspecified otherwise.</li>
 <li><strong>date</strong> (string): Format (DD/MM/YYYY, HH<!-- -->:mm<!-- -->). Date and time that the chat was occured. If omitted, the current date will be used.</li>
 </ul>
 <p>Message object:</p>
