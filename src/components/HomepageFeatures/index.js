@@ -49,6 +49,12 @@ const FeatureList = [
       </>
     ),
   },
+  {
+    title: 'Vela APIs',
+    link: '/docs/Vela APIs',
+    description: 'Learn how to upload call recordings.',
+  },
+  
 ];
 
 function Feature({ title, link, description }) {
