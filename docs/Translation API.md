@@ -7,24 +7,106 @@ import TabItem from '@theme/TabItem';
 
 # Translation API
 
-**Translate POST**
-
+## Endpoint:`/translate`
 ```bash
 https://api.botlhale.xyz/translate
 ```
+**Method**`POST`
+
+This endpoint handles language translation, primarily to English, but can support translations to other target languages if specified.
 
 :::tip
 > You need to include an `Authentication Token` in request headers. See the [Authentication](docs/API.md#authentication) page of this documentation for information on how to generate authentication token codes.
 :::
 
-This endpoint handles translations from the specified language to English.
+#### Authentication
+
+A valid **Bearer token** must be included in the request headers for authentication.
+
+**Headers:**
+- Authorization: Bearer `<your_token>`
+
+
+#### Form Arguments
+
+This endpoint handles translations from the specified language to English, but can support translations to other target languages if specified.
+
 
 Request Params | Data Type | |Description
 | ------------- | ------------- | ------------- | ------------- |
 | Text  | `string` |**Required** |This is the text to be translated. | 
-| LanguageCode  | `string` |**Required** |This is the language code of the text that requires translation.| 
-| TargetCode  | `string` |**Required** |This is the language code for the output after translation.<br/>See the **Supported Languages** below for a list of supported languages and codes. |
-| OrgID  | `string` |**Required** |This is the OrgID. Botlhale provides you with the OrgID.||
+| LanguageCode  | `string` |**Optional** | The source language code of the text. If not provided, the API will attempt to detect the source language automatically.| 
+| TargetCode  | `string` |**Optional** | The target language code for translation. Defaults to 'en-ZA' (English - South Africa). |
+| OrgID  | `string` |**Required** |The unique identifier for the organization making the request.|
+| TranslateID  | `string` |**Optional** | A unique ID for the translation request, useful for fetching existing translations.||
+
+**Response**
+
+The API returns a JSON object with the following structure:
+```
+Unset
+{
+    "Characters": 13,
+    "DateReceived": "20/02/2025 08:29:45",
+    "TranslateID": "8d30a7D1w1CT6Ix59q",
+    "Translation": "abc123",
+    "detectedSourceLanguage": null
+}
+```
+
+| Request Params | Data Type | Description |
+| ------------- | ------------- | ------------- |
+| Translation  | `string` | The translated text. | 
+| DateReceived  | `string` |  The date and time when the request was received, in ISO 8601 format.| 
+| Characters  | `integer` |  The number of characters in the source text. |
+| TranslateID  | `string` |  The unique ID of the translation request. |
+| detected_source_language | `string` | The detected source language of the text if `language_code` was not provided.|
+
+
+## Endpoint:`/translate/v2`
+
+#### **Method:**`POST`
+
+This endpoint handles language translation, primarily to English, but can support translations to other target languages if specified.
+
+#### Authentication
+
+A valid **Bearer token** must be included in the request headers for authentication.
+
+**Headers:**
+- **Authorization:** Bearer `<your_token>`
+
+
+Request Body |File Type | | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| org_id  | `String`  | **Required** |  The unique identifier for the organization making the request.| 
+| text  | `String`  | **Required** |  The text to be translated.|
+| language_code  | `String`  | **Optional** |  The source language code of the text. If not provided, the API will attempt to detect the source language automatically. |
+| target_code  | `String`  | **Optional** |   The target language code for translation. Defaults to 'en-ZA' (English - South Africa). |
+| translate_id  | `String`  | **Optional** |   A unique ID for the translation request, useful for fetching existing translations. |
+
+
+#### Response
+```json
+{
+    "characters": 39,
+    "date_received": "21/02/2025 16:03:34",
+    "detected_source_language": null,
+    "translate_id": "3VuJc9537zS0JS87I0",
+    "translation": "When you want to buy a car press the start button."
+}
+```
+
+
+| Request Params | Data Type | Description |
+| ------------- | ------------- | ------------- |
+| translation  | `string` | The translated text. | 
+|date_received   | `string` |  The date and time when the request was received, in ISO 8601 format.| 
+| characters  | `integer` |   The number of characters in the source text. |
+| translate_id  | `string` |  The unique ID of the translation request. |
+| detected_source_language | `string` |  The detected source language of the text if language_code was not provided.|
+
+
 
 ## Supported Languages
 
@@ -45,7 +127,9 @@ speech tasks supported for each language. Our team is always working to add new 
 | Kiswahili   | Kenya        | sw-KE  | √           | √   | √   | √           | -           |
 | Kinyarwanda | Rwanda       | rw-RW  | √           | √   | -   | -           | -           |
 
-**Request Example**
+
+
+ **Request Example**
 
 <Tabs>
 <TabItem value="py" label="Python" default>
@@ -55,7 +139,7 @@ import requests
 
 url = "https://api-dev.botlhale.xyz/translate"
 
-payload = {'LanguageCode': 'xh-ZA',
+payload = {'language_code': 'xh-ZA',
 'Text': 'Xa ufuna ukuthenga imoto cofa iqhosha lokuqala.'}
 files=[
 
@@ -127,18 +211,14 @@ request(options, function (error, response) {
 </Tabs>
 
 
-**Response body**
-```json
-{
-    "Characters": 40,
-    "DateReceived": "09/03/2023 11:16:47",
-    "Translation": "When you want to buy a car press the start button."
-}
-```
+## Contact us
+
+:::info
+We are here to help! Please [contact us](mailto:support@botlhale.ai) with any questions.
+:::
 
 
-
-## Text-to-Speech API
+<!-- ## Text-to-Speech API
 
 **TTS POST**
 
@@ -993,4 +1073,4 @@ request(options, function (error, response) {
 
 :::info
 We are here to help! Please [contact us](mailto:support@botlhale.ai) with any questions.
-:::
+::: -->

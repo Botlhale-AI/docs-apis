@@ -49,9 +49,25 @@ const FeatureList = [
       </>
     ),
   },
-  
+  {
+    title: 'Authentication API',
+    link: '/docs/Authentication-API',
+    description: (
+      <>
+        Learn how to securely authenticate users and services with our API.
+      </>
+    ),
+  },
+  {
+    title: 'Vela APIs',
+    link: '/docs/Vela-APIs',
+    description: (
+      <>
+        Discover our suite of Vela APIs for enhanced integrations and workflows.
+      </>
+    ),
+  },
 ];
-
 
 const ytVideos = [
   {
@@ -99,9 +115,15 @@ const ytVideos = [
 function Feature({ title, link, description }) {
   return (
     <>
-      <a href={link} rel="noopener noreferrer" className={clsx('col col--3', styles.border, styles.textv, styles.feature)}>
+      <a
+        href={link}
+        rel="noopener noreferrer"
+        className={clsx('col col--3', styles.border, styles.textv, styles.feature)}
+      >
         <div className="text--center padding-horiz--md">
-          <Heading as="h3" className={styles.hcolor}>{title}</Heading>
+          <Heading as="h3" className={styles.hcolor}>
+            {title}
+          </Heading>
           <p className={styles.textcolor}>{description}</p>
         </div>
       </a>
@@ -112,8 +134,14 @@ function Feature({ title, link, description }) {
 function YoutubeVideo({ title, videoId }) {
   return (
     <div className={clsx('col col--3', styles.yt)}>
-      <div className=" padding-horiz--md">
-        <iframe title={title} width="284.16px" height="159.13px" src={`https://www.youtube.com/embed/${videoId}`} allowFullScreen></iframe>
+      <div className="padding-horiz--md">
+        <iframe
+          title={title}
+          width="284.16px"
+          height="159.13px"
+          src={`https://www.youtube.com/embed/${videoId}`}
+          allowFullScreen
+        ></iframe>
         <Heading as="p">{title}</Heading>
       </div>
     </div>
@@ -123,8 +151,13 @@ function YoutubeVideo({ title, videoId }) {
 export default function HomepageFeatures() {
   return (
     <div className="container">
-      <Heading as="h3" className={styles.textheading}>API Documentation</Heading>
-      <p className={styles.text}>Botlhale AI's APIs follow REST principles. They feature resource-oriented URLs, accept form-encoded request bodies, return JSON responses, and use standard HTTP response codes and authentication. For more details, look at the cards below.</p>
+      <Heading as="h3" className={styles.textheading}>
+        API Documentation
+      </Heading>
+      <p className={styles.text}>
+        Botlhale AI's APIs follow REST principles. They feature resource-oriented URLs, accept form-encoded request bodies,
+        return JSON responses, and use standard HTTP response codes and authentication. For more details, look at the cards below.
+      </p>
       <section>
         <div className="row">
           {FeatureList.map((props, idx) => (
@@ -132,7 +165,7 @@ export default function HomepageFeatures() {
           ))}
         </div>
       </section>
-      
+
       {/* <Heading as="h2" className={styles.marg}>Bua Tutorial Videos</Heading>
       <div className="row">
         {ytVideos.map((props, idx) => (
