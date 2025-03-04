@@ -80,6 +80,13 @@ export default function HomepageFeatures() {
           ))}
         </div>
       </section>
+      <section>
+        <div className="row">
+          {FeatureList.map((props, idx) => (
+            <Feature key={idx} {...props} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
