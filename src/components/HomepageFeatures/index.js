@@ -70,7 +70,7 @@ function Feature({ title, link, description }) {
 
 export default function HomepageFeatures() {
   return (
-    <div className="containers">
+    <div className="container">
       <Heading as="h3" className={styles.textheading}>API Documentation</Heading>
       <p className={styles.text}>Botlhale AI's APIs follow REST principles. They feature resource-oriented URLs, accept form-encoded request bodies, return JSON responses, and use standard HTTP response codes and authentication. For more details, look at the cards below.</p>
       <section>
