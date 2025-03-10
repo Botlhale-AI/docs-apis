@@ -35,23 +35,24 @@ This endpoint handles translations from the specified language to English, but c
 Request Params | Data Type | |Description
 | ------------- | ------------- | ------------- | ------------- |
 | Text  | `string` |**Required** |This is the text to be translated. | 
-| LanguageCode  | `string` |**Optional** | The source language code of the text. If not provided, the API will attempt to detect the source language automatically.| 
-| TargetCode  | `string` |**Optional** | The target language code for translation. Defaults to 'en-ZA' (English - South Africa). |
 | OrgID  | `string` |**Required** |The unique identifier for the organization making the request.|
-| TranslateID  | `string` |**Optional** | A unique ID for the translation request, useful for fetching existing translations.||
+| TargetCode  | `string` |**Optional** | The target language code for translation. Defaults to 'en-ZA' (English - South Africa). |
+| TranslateID  | `string` |**Optional** | A unique ID for the translation request, useful for fetching existing translations.|
+| LanguageCode  | `string` |**Optional** | The source language code of the text. If not provided, the API will attempt to detect the source language automatically.| 
 
 **Response**
 
 The API returns a JSON object with the following structure:
-```
+```python
 Unset
 {
-    "Characters": 13,
-    "DateReceived": "20/02/2025 08:29:45",
-    "TranslateID": "8d30a7D1w1CT6Ix59q",
-    "Translation": "abc123",
-    "detectedSourceLanguage": null
+    "Translation": "Translated text",
+    "DateReceived": "2025-01-28T10:00:00Z",
+    "Characters": 150,
+    "TranslateID": "abc123",
+    "detected_source_language": "fr"
 }
+
 ```
 
 | Request Params | Data Type | Description |
@@ -87,14 +88,17 @@ Request Body |File Type | | Description |
 
 
 #### Response
-```json
+```python
+Unset
 {
-    "characters": 39,
-    "date_received": "21/02/2025 16:03:34",
-    "detected_source_language": null,
-    "translate_id": "3VuJc9537zS0JS87I0",
-    "translation": "When you want to buy a car press the start button."
+    "translation": "Translated text",
+    "date_received": "2025-01-28T10:00:00Z",
+    "characters": 150,
+    "translate_id": "abc123",
+    "detected_source_language": "fr"
 }
+
+
 ```
 
 
@@ -128,7 +132,7 @@ speech tasks supported for each language. Our team is always working to add new 
 | Kinyarwanda | Rwanda       | rw-RW  | √           | √   | -   | -           | -           |
 
 
-
+<!-- 
  **Request Example**
 
 <Tabs>
@@ -208,7 +212,7 @@ request(options, function (error, response) {
 ```
 
 </TabItem>
-</Tabs>
+</Tabs> -->
 
 
 ## Contact us

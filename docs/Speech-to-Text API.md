@@ -161,16 +161,12 @@ request(options, function (error, response) {
 **Response body**
 
 The API returns a JSON object with the following structure:
-```json
+```py
+Unset
 {
-    "audio_length": 3.3467120181405896,
-    "date_received": "20/02/2025 14:23:08",
-    "id": "N5bliIh2i7MP9K5",
-    "language_code": "en-ZA",
-    "redacted_transcription": "The stale smell of old beer lingers.",
-    "speech_file": "asr_97s48SiZ98Gj_en-ZA__r242Sh8A4D2T.wav",
-    "text": " The stale smell of old beer lingers.",
-    "time": 1.5026299953460693
+    "transcription": "Hello, how can I assist you?",
+    "s3_filename": "uploads/audio_123456.wav",
+    "date_received": "2025-01-28T10:00:00Z"
 }
 ```
 **Fields:**
@@ -224,18 +220,17 @@ Form Arguments
 
 **Request Body**
 
-```
+```python
+Unset
 {
+    "upload_url": "https://s3-bucket-url.com/presigned-upload-link",
     "fields": {
-        "key": "BotlhaleAI999/asr_203vpAc0el98__16000_BotlhaleAI999__False__i74Y1R29J5lo21022025_081733.wav",
-        "policy": "eyJleHBpcmF0aW9uIjogIjIwMjUtMDItMjFUMDc6MTc6MzRaIiwgImNvbmRpdGlvbnMiOiBbeyJidWNrZXQiOiAiYm90bGhhbGUtYXBpLWFzci1hc3luYy13ZXN0LWRldiJ9LCB7ImtleSI6ICJCb3RsaGFsZUFJOTk5L2Fzcl8yMDN2cEFjMGVsOThfXzE2MDAwX0JvdGxoYWxlQUk5OTlfX0ZhbHNlX19pNzRZMVIyOUo1bG8yMTAyMjAyNV8wODE3MzMud2F2In0sIHsieC1hbXotYWxnb3JpdGhtIjogIkFXUzQtSE1BQy1TSEEyNTYifSwgeyJ4LWFtei1jcmVkZW50aWFsIjogIkFTSUEyQURNUFY3RUJJSUlBM1VSLzIwMjUwMjIxL2V1LXdlc3QtMS9zMy9hd3M0X3JlcXVlc3QifSwgeyJ4LWFtei1kYXRlIjogIjIwMjUwMjIxVDA2MTczNFoifSwgeyJ4LWFtei1zZWN1cml0eS10b2tlbiI6ICJJUW9KYjNKcFoybHVYMlZqRUtmLy8vLy8vLy8vL3dFYUNXVjFMWGRsYzNRdE1TSkhNRVVDSVFEYkJZMENqY2pIV1J4djdFYnJLV08vWVRacVdCWkF1YXpjdGRNMVRLNUc5QUlnUHA4Yi9zc29zclc1QTRXakl6ZEVZb3drcS84SXhjN0wreE56L1k4ck9hc3F2QU1Jei8vLy8vLy8vLy8vQVJBRkdndzJPRGMwTWpJeU9EYzRNVFlpREdjNGh3cHJHa3hjeVd6U1FpcVFBK3MzdkY4clcvYUR0NmR1bHFXd0FhNGFrWmpzS0xXTG9udUhDZ2JYQ0FKaFRQNG5kSFBKQ2JmTGd5UnJzcnVMWHdWdmpUcXhlNXpydDVXbEw0eWtUeWtETnRwQjBHOUJldEtLdit6L0dGMGsrN1ZvTUQ0RERWTVVhL3FENitFbGk2RXR2OGMxdjBTNFJDRDRTNWRCMHU4d2tURSszakV3cXNIWktLR1pzN1l1OWdlRWhCcFcvc1VCRUtqak94dmcwbkhweGlrcUt0Nko1V3lNQlhCRFdQWEl3WXliTjJPVTN4dTlqSi95ckFFMktJZU1IeUxFUkwxKzR6Y01FOE5BME83d2syc0dkZy9wUHRHZXpLZjRQeU4wYzhFQTV1cnNDMjRhbE5Vc3hwMXRSbERXRVlDWC9YRHZWZnZaUG01aktnbHRXUS9JYWRxdzFnNXRXQWlTVVU5VjhqaUx6OExPN2hjQzZBbzBDTFY2SEUrSkI3eTFHazE4cGZHeFR1c1dXN081SDR3aGRGUUxVbFlseERFaUJnRjVlOXFSblhtZW5pVGttbmEyQ3RFbWljOFVYMDVmN0FyUVFaLy80TGZJeXJPV3lHV21mam12SFdYVDJpT1F2SFhxWkdTU29nYkR5cmRwQ2NucVJIQXNYQVZNSHVBbGV2dVc4LzE0STZreXZUaEc5MWppVDd3dXY2YjNickhKai9Jdys3VGd2UVk2bmdGZGtCbktyMEthYm16WDFVNXVqUXlUTnQrNSt2TzIxdjRZTi9DVHNmb3k1R3lsSnV1OXlIdWEwWEJldHVNcDNzdjdNSS8wWHFxZ1kzZ1ZJcGlvdDNxd0hnM0pEelp2bG9QZWt6NERvVU02YXRFaDVLRndZSFhieHhYeU5xL2VlRHBNV2czSkRUcGxuZG5LcVk5c1E2UXhiY0t2bUNJd3plc0JZYlFnWTVXdysxd0cvTXFVM0tuS2c0cWRwaUF3dU11eTcvTFRZdm1VR1BNV2dxeDFIdz09In1dfQ==",
-        "x-amz-algorithm": "AWS4-HMAC-SHA256",
-        "x-amz-credential": "ASIA2ADMPV7EBIIIA3UR/20250221/eu-west-1/s3/aws4_request",
-        "x-amz-date": "20250221T061734Z",
-        "x-amz-security-token": "IQoJb3JpZ2luX2VjEKf//////////wEaCWV1LXdlc3QtMSJHMEUCIQDbBY0CjcjHWRxv7EbrKWO/YTZqWBZAuazctdM1TK5G9AIgPp8b/ssosrW5A4WjIzdEYowkq/8Ixc7L+xNz/Y8rOasqvAMIz///////////ARAFGgw2ODc0MjIyODc4MTYiDGc4hwprGkxcyWzSQiqQA+s3vF8rW/aDt6dulqWwAa4akZjsKLWLonuHCgbXCAJhTP4ndHPJCbfLgyRrsruLXwVvjTqxe5zrt5WlL4ykTykDNtpB0G9BetKKv+z/GF0k+7VoMD4DDVMUa/qD6+Eli6Etv8c1v0S4RCD4S5dB0u8wkTE+3jEwqsHZKKGZs7Yu9geEhBpW/sUBEKjjOxvg0nHpxikqKt6J5WyMBXBDWPXIwYybN2OU3xu9jJ/yrAE2KIeMHyLERL1+4zcME8NA0O7wk2sGdg/pPtGezKf4PyN0c8EA5ursC24alNUsxp1tRlDWEYCX/XDvVfvZPm5jKgltWQ/Iadqw1g5tWAiSUU9V8jiLz8LO7hcC6Ao0CLV6HE+JB7y1Gk18pfGxTusWW7O5H4whdFQLUlYlxDEiBgF5e9qRnXmeniTkmna2CtEmic8UX05f7ArQQZ//4LfIyrOWyGWmfjmvHWXT2iOQvHXqZGSSogbDyrdpCcnqRHAsXAVMHuAlevuW8/14I6kyvThG91jiT7wuv6b3brHJj/Iw+7TgvQY6ngFdkBnKr0KabmzX1U5ujQyTNt+5+vO21v4YN/CTsfoy5GylJuu9yHua0XBetuMp3sv7MI/0XqqgY3gVIpiot3qwHg3JDzZvloPekz4DoUM6atEh5KFwYHXbxxXyNq/eeDpMWg3JDTplndnKqY9sQ6QxbcKvmCIwzesBYbQgY5Ww+1wG/MqU3KnKg4qdpiAwuMuy7/LTYvmUGPMWgqx1Hw==",
-        "x-amz-signature": "e3cca032a465e57b837b5d2de1030bbe9e195923291817e7649dd5dec4f16546"
+        "key": "asr_uploads/audio_123456.wav",
+        "AWSAccessKeyId": "AKIA...",
+        "policy": "base64-encoded-policy",
+        "signature": "signature-string"
     },
-    "url": "https://botlhale-api-asr-async-west-dev.s3.amazonaws.com/"
+    "expires_in": 3600
 }
 ```
 
@@ -833,7 +828,7 @@ A valid **Bearer token** must be included in the request headers.
 The API returns a JSON object containing a presigned URL and the required fields for uploading the audio file.
 
 **Example Response:**
-```
+```py
 Unset
 {
     "upload_url": "https://s3-bucket-url.com/presigned-upload-link",
@@ -883,7 +878,7 @@ A valid **Bearer token** must be included in the request headers.
 The API returns a JSON object containing the status of the process and the results if available.
 
 **Example Response (Running ):**
-```
+```py
 Unset
 {
     "status": "running",
@@ -893,7 +888,7 @@ Unset
 ```
 
 **Example Response (Completed):**
-```
+```py
 Unset
 {
     "status": "completed",
@@ -927,7 +922,7 @@ A valid **Bearer token** must be included in the request headers.
 The API returns a **JSON object** containing metadata about the processed audio and **detailed transcription data.**
 
 **Example Response (Completed)**
-```
+```py
 Unset
 {
     "audio_length": 293.52,

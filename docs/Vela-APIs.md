@@ -40,7 +40,7 @@ Description:This API endpoint generates a presigned URL and associated credentia
 
 #### Sample Response:
 
-```bash
+```py
 {
     "fields": {
         "key": "<key>",

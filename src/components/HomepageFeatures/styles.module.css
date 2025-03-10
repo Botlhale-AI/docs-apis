@@ -10,15 +10,49 @@ body {
   margin-top: 100px;
 }
 
+.featuresSection {
+  margin-top: 4rem;
+  padding: 3rem;
+  min-height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-left: 10%; */
+}
+
 .feature {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border: 1.5px solid black;
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  height: 400px; 
+  box-shadow:  0px 0px 10px  rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 .feature:hover {
   transform: scale(1.05);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  box-shadow:  0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: #717171;
 }
+
+.feature h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.feature p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
 
 .content {
   transition: opacity 0.3s ease-in-out;
@@ -108,6 +142,94 @@ body {
   padding: 10px;
   width: 287.95px;
   height: auto;
+}
+
+.heroSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 3rem;
+  height: 100vh; 
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.heroText {
+  flex: 1;
+  text-align: left;
+}
+
+.heroImageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.heroLogo {
+  width: 400px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px #717171, 0 4px 10px #717171; 
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.heroSubtitle {
+  font-size: 1.20rem;
+  font-weight: 400;
+  color: var(--text-color);
+  line-height: 1.8;
+  margin-top: 1rem;
+}
+
+.getStarted {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: black ;
+  background-color:  #717171;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 300px; 
+}
+
+/* Hover Effect */
+.getStarted:hover {
+  background:#717171;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.getStarted:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 8px #3c3c3b;
+}
+
+.getStarted svg {
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Media query for tablets and larger devices */

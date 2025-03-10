@@ -93,7 +93,7 @@ The API returns a JSON object along with an HTTP status code.
 
 **Successful User Creation:**
 
-```
+```py
 Unset 
 {
     "message": ""Your username is {email}and temporary password is {password}."
@@ -130,7 +130,7 @@ The API returns a JSON object along with an HTTP status code.
 
 **Successful Authentication:**
 
-```
+```py
 Unset
 {
     "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
@@ -158,7 +158,7 @@ The request body should include the following field:
 
   The API returns a JSON object along with an HTTP status code.
  **Successful Password Reset Initiation:**
- ```
+ ```py
  Unset
  {
     "message": "Password reset initiated successfully. Please check your email for further instructions."
@@ -188,7 +188,7 @@ The request body must include the following fields:
  The API returns a JSON object along with an HTTP status code.
 
 **Successful Password Reset Confirmation:**
-```
+```py
 Unset
 {
     "message": "Password reset confirmed successfully."
@@ -215,7 +215,7 @@ The request must include the following query parameter:
 
 **Successful Retrieval of Tokens:**
 
-```
+```py
 Unset 
 {
     "refresh_tokens": [
@@ -279,7 +279,7 @@ The request body must include the following fields:
  The API returns a JSON object along with an HTTP status code.
  
 **Successful Token Revocation:**
-```
+```py
 Unset
 {
     "message": "Refresh token revoked successfully."
@@ -306,11 +306,11 @@ The request body should include the following field:
 The API returns a JSON object along with an HTTP status code.
 
 **Successful Token Generation:**
-```
+```py
 Unset
 {
-    "expires":  86400,
-    "token": "eyJraWQiOiJwNzBVMDJlQzMxV01WbGg3b...."
+    "token": "new_auth_token_abc123",
+    "expires": 3600
 }
 ```
 
@@ -430,7 +430,7 @@ curl --location --request POST 'https://api.botlhale.io/generate' \
 </Tabs>
 
 #### Response body
-```json
+```py
 {
     "AuthenticationResult": {
         "AccessToken": "<AccessToken>",
@@ -488,4 +488,8 @@ format of this error entity is shown in the following table.
 | `500, 502, 503, 504 - Server Errors` | Something went wrong on Botlhale's end (these are rare).
 
 
+## Contact us
 
+:::info
+We are here to help! Please [contact us](mailto:support@botlhale.ai) with any questions.
+::: 

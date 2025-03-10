@@ -35,15 +35,15 @@ Request Params |Data Type | |Description |
 The API returns a JSON object containing the **audio URL** and additional details about the request.#
 
 **Example Response:**
-```
+```python
 Unset
 {
-    "date_received": "20022025_083419",
-    "language_code": "en-ZA",
-    "speech_url": "https://botlhale-api-tts-west.s3.amazonaws.com/tts_tO9Tr6B1yD1VT950ven.wav?AWSAccessKeyId=AKIA2ADMPV7EP36BOBPX&Signature=GOLUnQhTiKdQvUSU2iEbbh8KkEI%3D&Expires=1740036859",
-    "text": "BotlhaleAI"
+    "audio_url": "https://s3-bucket-url.com/tts/audio_123456.mp3",
+    "language_code": "en-US",
+    "text": "Hello, how are you?",
+    "sampling_rate": 22050,
+    "date_received": "2025-01-28T10:00:00Z"
 }
-
 ```
 **Response Fields:**
 

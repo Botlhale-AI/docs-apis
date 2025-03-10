@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import logo from '/static/img/ficon.png';
 
 const FeatureList = [
   {
@@ -50,15 +51,6 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Authentication API',
-    link: '/docs/Authentication-API',
-    description: (
-      <>
-        Learn how to securely authenticate users and services with our API.
-      </>
-    ),
-  },
-  {
     title: 'Vela APIs',
     link: '/docs/Vela-APIs',
     description: (
@@ -69,109 +61,62 @@ const FeatureList = [
   },
 ];
 
-const ytVideos = [
-  {
-    title: '1. Getting started',
-    videoId: 'O8G7hpGfBmM',
-  },
-  {
-    title: '2. Managing Organisations',
-    videoId: 'crwdqdA1oLw',
-  },
-  {
-    title: '3. Create a bot & managing intents',
-    videoId: 'aqsn22rQETM',
-  },
-  {
-    title: '4. Managing dialogues',
-    videoId: 'jYZUQHF0ElQ',
-  },
-  {
-    title: '5. Training and Testing',
-    videoId: 'EPUGUwNJCRs',
-  },
-  {
-    title: '6.1 How to use Entities',
-    videoId: 'X7DJs47Ycsc',
-  },
-  {
-    title: '6.2 Creating a bot that responds with an entity',
-    videoId: 'wPeY1B1vkIc',
-  },
-  {
-    title: '7. Using buttons',
-    videoId: 'K9NnmlxBBl8',
-  },
-  {
-    title: '8. Collection information using forms',
-    videoId: 'Xs6P80pWpvE',
-  },
-  {
-    title: '9. Hitting endpoints within the conversations',
-    videoId: 'noxVPmrcXfg',
-  },
-];
-
 function Feature({ title, link, description }) {
   return (
-    <>
-      <a
-        href={link}
-        rel="noopener noreferrer"
-        className={clsx('col col--3', styles.border, styles.textv, styles.feature)}
-      >
-        <div className="text--center padding-horiz--md">
-          <Heading as="h3" className={styles.hcolor}>
-            {title}
-          </Heading>
-          <p className={styles.textcolor}>{description}</p>
-        </div>
-      </a>
-    </>
-  );
-}
-
-function YoutubeVideo({ title, videoId }) {
-  return (
-    <div className={clsx('col col--3', styles.yt)}>
-      <div className="padding-horiz--md">
-        <iframe
-          title={title}
-          width="284.16px"
-          height="159.13px"
-          src={`https://www.youtube.com/embed/${videoId}`}
-          allowFullScreen
-        ></iframe>
-        <Heading as="p">{title}</Heading>
+    <a
+      href={link}
+      rel="noopener noreferrer"
+      className={clsx('col col--3', styles.border, styles.textv, styles.feature)}
+    >
+      <div className="text-- padding-horiz--md">
+        <Heading as="h3" className={styles.hcolor}>
+          {title}
+        </Heading>
+        <p className={styles.textcolor}>{description}</p>
       </div>
-    </div>
+    </a>
   );
 }
 
 export default function HomepageFeatures() {
+  // Smooth-scroll to the Features section
+  const scrollToFeatures = () => {
+    document
+      .querySelector(`.${styles.featuresSection}`)
+      .scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="container">
-      <Heading as="h3" className={styles.textheading}>
-        API Documentation
-      </Heading>
-      <p className={styles.text}>
-        Botlhale AI's APIs follow REST principles. They feature resource-oriented URLs, accept form-encoded request bodies,
-        return JSON responses, and use standard HTTP response codes and authentication. For more details, look at the cards below.
-      </p>
-      <section>
+    <div className={styles.pageContainer}>
+      {/* Hero Section  */}
+      <section className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <div className={styles.heroText}>
+            <h1 className={styles.heroTitle}>API Documentation</h1>
+            <p className={styles.heroSubtitle}>
+              Botlhale AI's APIs follow REST principles. They feature resource-oriented URLs,
+              accept form-encoded request bodies, return JSON responses, and use standard HTTP
+              response codes and authentication. For more details, look at the cards below.
+              <br />
+            </p>
+            <div className={styles.getStarted} onClick={scrollToFeatures}>
+              Get Started
+            </div>
+          </div>
+          <div className={styles.heroImageContainer}>
+            <img src={logo} alt="API Logo" className={styles.heroLogo} />
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className={styles.featuresSection}>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
         </div>
       </section>
-
-      {/* <Heading as="h2" className={styles.marg}>Bua Tutorial Videos</Heading>
-      <div className="row">
-        {ytVideos.map((props, idx) => (
-          <YoutubeVideo key={idx} {...props} />
-        ))}
-      </div> */}
     </div>
   );
 }

@@ -41,15 +41,14 @@ A valid **Bearer token** must be included in the request headers for authenticat
 
 **The API returns a JSON object with the following structure:**
 
-```
+```py
 Unset
 {
-    "conversation_id": "54i2IE3Qdv50",
-    "language_code": "English",
-    "user_id": "54i2IE3Qdv50"
+    "conversation_id": "conv_123456",
+    "user_id": "user_789",
+    "language_code": "en-ZA",
+    "platform": "API"
 }
-
-
 ```
 **Fields:**
 
@@ -88,14 +87,15 @@ A valid **Bearer token** must be included in the request headers for authenticat
 | bot_id        | string | **Required**  |  Specifies which bot the message should be sent to.   |
 | language_code   | string | **Required**  |  The language the user is using to interact with the bot. |
 | conversation_id | string | **Required**  | A unique ID to keep track of different conversations. |
-| message_type          | string | **Optional**  |  Specifies the type of user message. Supported values:'text','image','pdf' and 'speech'.|
-| response_type  | string | **Optional**  |  Specifies the desired response format. Supported values:'text' and 'speech'.|
 | text_msg  | string | **Required** if message_type is `text`|   The text message from the user to the bot.|
 |image_url  | string | **Required** if message_type is `image`|  The URL of the image to be processed.|
 | pdf_url  | string | **Required** if message_type is `pdf`|   The URL of the PDF to be processed.|
+| speech_file  | file | **Required** if message_type is `speech`|  The binary audio file of the user's message.|
+| message_type          | string | **Optional**  |  Specifies the type of user message. Supported values:'text','image','pdf' and 'speech'.|
+| response_type  | string | **Optional**  |  Specifies the desired response format. Supported values:'text' and 'speech'.|
 | platform  | string | **Optional** |    Defaults to 'API' if not provided.|
 | user_id  | string | **Optional** |   Defaults to the conversation_id if not provided.|
-| speech_file  | file | **Required** if message_type is `speech`|  The binary audio file of the user's message.|
+
 
 
 **Request Example**
@@ -316,40 +316,27 @@ req.end();
 
 **Response body**
 
-```json
+```py
 {
-    "bot_id": "XYQKZMXTQCBZHLMT",
-    "buttons": [
-        {
-            "payload": "/customer_support",
-            "title": "Customer Service"
-        },
-        {
-            "payload": "/setup_shop",
-            "title": "Set Up Shop"
-        },
-        {
-            "payload": "/about_us",
-            "title": "About Us"
-        }
-    ],
-    "confidence": "0.9999995231628418",
-    "conversation_id": "54i2IE3Qdv50",
-    "custom": "",
-    "date_received": "20/02/2025 08:32:54",
+    "text_msg": "Hello, how can I assist you?",
+    "transcription": "Hello bot",
+    "speech_response_url": "https://example.com/audio.mp3",
+    "message_id": "msg_123456",
+    "conversation_id": "conv_789",
+    "user_id": "user_789",
+    "bot_id": "bot_001",
+    "language_code": "en-US",
+    "date_received": "2025-01-28T10:00:00Z",
+    "text_response": "Hi! How can I help you today?",
+    "intent": "greeting",
     "entities": [],
-    "intent": "greet",
-    "language_code": "English",
-    "message_id": "54i2IE3Qdv50_t7h6234MPSM8",
-    "text_msg": "Hello",
-    "text_response": [
-        "Hello, **!\n\n🌟 Welcome to EaziThenga's WhatsApp Support Line! 🌟\n\nI'm Susan, your friendly EaziThenga's Support Bot, and I'm working here alongside our customer support team. Together, we're here to ensure you get fast, accurate, and friendly assistance!.\n\n You can chat with me using text or voice notes. If there's anything complex or sensitive that I can't handle, our agents will step in to ensure you're well taken care of! 🚀\n\n How may I assist you today?"
-    ],
-    "user_id": "54i2IE3Qdv50"
+    "buttons": [],
+    "confidence": "0.95",
+    "custom": {}
 }
 ```
 
-**Text - Speech example request**
+<!-- **Text - Speech example request**
 
 
 <Tabs>
@@ -679,7 +666,7 @@ req.write(postData);
 req.end();
 ```
 </TabItem>
-</Tabs>
+</Tabs> -->
 
 
 
@@ -708,4 +695,4 @@ req.end();
 
 :::info
 We are here to help! Please [contact us](mailto:support@botlhale.ai) with any questions.
-::: -->
+:::
