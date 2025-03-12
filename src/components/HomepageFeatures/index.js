@@ -79,7 +79,6 @@ function Feature({ title, link, description }) {
 }
 
 export default function HomepageFeatures() {
-  // Smooth-scroll to the Features section
   const scrollToFeatures = () => {
     document
       .querySelector(`.${styles.featuresSection}`)
@@ -96,7 +95,7 @@ export default function HomepageFeatures() {
             <p className={styles.heroSubtitle}>
               Botlhale AI's APIs follow REST principles. They feature resource-oriented URLs,
               accept form-encoded request bodies, return JSON responses, and use standard HTTP
-              response codes and authentication. For more details, look at the cards below.
+              response codes and authentication. 
               <br />
             </p>
             <div className={styles.getStarted} onClick={scrollToFeatures}>

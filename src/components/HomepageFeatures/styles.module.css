@@ -148,31 +148,39 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 3rem;
-  height: 100vh; 
+  padding: 4rem 0;
+  height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .heroContent {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
+  padding: 0 2rem;
+  gap: 2rem;
 }
 
 .heroText {
   flex: 1;
   text-align: left;
+  max-width: 600px;
 }
 
 .heroImageContainer {
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .heroLogo {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: auto;
   border-radius: 50%;
   box-shadow: 0 4px 10px #717171, 0 4px 10px #717171; 
@@ -255,6 +263,23 @@ body {
     line-height: 1.5;
     height: auto;
     margin-top: 20px;
+  }
+  .heroContent {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .heroText {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .heroImageContainer {
+    width: 100%;
+  }
+  
+  .getStarted {
+    margin: 2rem auto;
   }
 }
 

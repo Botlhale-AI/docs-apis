@@ -55,7 +55,7 @@ const config = {
             position: 'right',
             to: '/',
             href: '/',
-            exact: 'true', // Ensure exact is passed as a string
+            exact: 'true',
             html: `
               <img
                 src="/img/logo.png"
@@ -64,15 +64,6 @@ const config = {
                 style="height: 2rem; margin-right: 1rem; filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.75)); "
               >`,
           },
-          // {
-          //   type: 'html',
-          //   position: 'right',
-          //   value: `
-          //     <button id="download-pdf-button" style="background: none; border: none; color: inherit; cursor: pointer; font: inherit; outline: inherit;">
-          //       Download as PDF
-          //     </button>
-          //   `,
-          // },
         ],
       },
       scripts: [
